@@ -13,3 +13,10 @@ def kNearestNeighbor(X_train, X_test, y_train) :
 
     return predictions, y_prob
 
+def kNNOpt(X_train,X_test, y_train,numNeighbors, r):
+    neigh = KNeighborsClassifier(n_neighbors = numNeighbors, radius = r)
+    neigh.fit(X_train, y_train)
+    predictions = neigh.predict(X_test)
+    y_prob = neigh.predict(X_test)
+
+    return predictions, y_prob
